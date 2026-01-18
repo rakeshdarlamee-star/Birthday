@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Happy Birthday Sakhi ❤️😊</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #ff9a9e, #fad0c4);
+            text-align: center;
+            margin: 0;
+        }
+
+        h1, h2 {
+            color: white;
+        }
+
+        .box {
+            background: white;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 15px;
+        }
+
+        .gallery img {
+            width: 220px;
+            height: 220px;
+            margin: 10px;
+            border-radius: 15px;
+            box-shadow: 0 0 10px gray;
+        }
+
+        input, button {
+            padding: 10px;
+            font-size: 16px;
+            margin: 10px;
+        }
+
+        button {
+            background: #ff6f91;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        footer {
+            background: #ff6f91;
+            color: white;
+            padding: 10px;
+        }
+
+        /* POP-UP */
+        .popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .popup-content {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            width: 300px;
+            animation: zoom 0.5s;
+        }
+
+        @keyframes zoom {
+            from {transform: scale(0);}
+            to {transform: scale(1);}
+        }
+    </style>
+
+    <script>
+        // GAME FUNCTION (FIXED)
+        function playGame() {
+            var secretNumber = 7; // you can change this
+            var guess = document.getElementById("guess").value;
+
+            if (guess == "") {
+                document.getElementById("result").innerHTML =
+                "⚠️ Please enter a number!";
+            }
+            else if (guess == secretNumber) {
+                document.getElementById("result").innerHTML =
+                "🎉 Correct! You are the Birthday Girl 👑💖";
+            }
+            else {
+                document.getElementById("result").innerHTML =
+                "❌ Wrong! Try again Sakhi 😄";
+            }
+        }
+
+        function closePopup() {
+            document.getElementById("popup").style.display = "none";
+        }
+
+        window.onload = function() {
+            document.getElementById("popup").style.display = "flex";
+        }
+    </script>
+</head>
+
+<body>
+
+    <!-- POP-UP -->
+    <div class="popup" id="popup">
+        <div class="popup-content">
+            <h2>🎉 Surprise 🎉</h2>
+            <p>
+                Happy Birthday Sakhi 💕<br>
+                You make my life brighter 🌈
+            </p>
+            <button onclick="closePopup()">🎁 Open Gift</button>
+        </div>
+    </div>
+
+    <h1>🎂 Happy Birthday Sakhi ❤️ 🎂</h1>
+    <h2>💖 Forever Sakha/Sakhi 💖</h2>
+
+    <div class="box">
+        Meri Sakhi,<br><br>
+        Thank you for being my smile, my support,
+        and my happiest memory 💫
+    </div>
+
+    <h2>📸 Our Memories 📸</h2>
+    <div class="gallery">
+        <img src="photo1.png">
+        <img src="photo2.png">
+        <img src="photo3.png">
+    </div>
+
+    <h2>🎮 Birthday Game 🎮</h2>
+    <div class="box">
+        <p>Guess the secret number (1–10)</p>
+        <input type="number" id="guess" min="1" max="10">
+        <br>
+        <button onclick="playGame()">Guess</button>
+        <p id="result"></p>
+    </div>
+
+    <footer>
+        Made with ❤️ by Your Sakha/Loid Forger 😊
+    </footer>
+
+</body>
+</html>
